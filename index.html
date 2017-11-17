@@ -125,20 +125,38 @@
   <div class="col-md-2">
   </div>
 <div class="col-md-8">
-  <input type="email" placeholder="Email" class="form-control"><br>
-  <textarea class="form-control" rows="8" placeholder="Comments"></textarea>
-  <button class="btn btn-warning btn-block">Submit</button>
+  <form id="contact" action="<?= $SERVER['PHP_SELF']; ?>" method="post">
+    <fieldset>
+      <input placeholder="Your name" type="text" tabindex="1" name="name" value="<?= $name ?>" autofocus>
+      <div class="error"><?php= $name_error ?></div>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Email Address" type="text" name= "email" value="<?= $email ?>" tabindex="2">
+      <div class="error"><?php= $email_error ?></div>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Phone Number" type="text" name="phone" value="<?= $phone ?>" tabindex="3">
+      <div class="error"><?php= $phone_error? ></div>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Type your Message Here...." type="text" name="message" value="<?= $message ?>" tabindex="5"></textarea>
+    </fieldset>
+    <fieldset>
+      <button class="btn btn-warning btn-block" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+    <div class="success"><?php= $success; ?></div>
+  </form>
 </div>
 </div>
 </div>
 </section>
 <footer>
-<div class="row">
-      <div class="col-md-6">
+  <div class="row">
+    <div class="col-md-6">
         <p>&copy; Stag Enterprises, Monica Hart</p>
-      </div>
-</div>
+    </div>
+  </div>
 </footer>
-</body>
 </main>
+</body>
 </html>
